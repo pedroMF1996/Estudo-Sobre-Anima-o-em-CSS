@@ -1,17 +1,22 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: rgb(130, 87, 229);
     background: radial-gradient(circle, rgba(130, 87, 229, 1) 0%, rgba(61, 19, 133, 1) 100%, rgba(130, 87, 229, 1) 100%);
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    overflow: hidden;
+    justify-content: center;
 }
 
 h1 {
     color: #fff;
-    margin-top: 5rem;
     opacity: 0;
     animation: fade 0.25s ease-in;
     animation-fill-mode: forwards;
@@ -24,7 +29,7 @@ h1 {
 label,
 button {
     width: fit-content;
-    margin: .75rem 0;
+    margin: 1.75rem 0;
 }
 
 button {
@@ -49,7 +54,7 @@ button:hover {
 input {
     border: 1px solid rgba(0, 0, 0, 0.2);
     height: 25px;
-    width: 210px;
+    min-width: 350px;
 }
 
 label {
@@ -69,7 +74,7 @@ label {
 
 .container {
     background-color: white;
-    min-width: 60%;
+    max-width: 75%;
     padding: .5rem 1.5rem 1.5rem;
     display: flex;
     flex-direction: column;
@@ -199,5 +204,15 @@ form .label2 {
     to {
         opacity: 0;
         transform: translateY(-800px) rotate(960deg);
+    }
+}
+
+@media (max-width: 768px) {
+    input {
+        min-width: 210px;
+    }
+    label,
+    button {
+        margin: .75rem 0;
     }
 }
